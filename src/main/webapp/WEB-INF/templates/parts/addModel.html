@@ -1,0 +1,71 @@
+<div data-th-fragment="addmodel">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-12">
+<form  th:action="@{/komis/model}" th:object="${addModel}" method="post">
+    <table id="table" >
+        <tr>
+            <td>Marka</td>
+            <td>
+                <select th:field="*{manufacturer}" name="form-control" class="form-control">
+                    <option value="">Wybierz</option>
+                    <option th:each="manufacturer : ${allManu}"
+                            th:value="${manufacturer.id}"
+                            th:text="${manufacturer.name}">name</option>
+                </select>
+
+            </td>
+            <td>
+                                <span style="color: red" data-th-if="${#fields.hasErrors('manufacturer')}"
+                                      data-th-errors="*{manufacturer}"></span>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Model</td>
+            <td>
+                <input class="form-control"  type="text" th:field="*{model}"/>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input  class="btn btn-primary" type="submit" value="Dodaj model"/>
+            </td>
+        </tr>
+
+    </table>
+
+    <table class="table table-striped table-dark">
+        <tr>
+            <td >Dostępne modele</td>
+
+        </tr>
+
+
+        <tr th:each="modelList , iterationInfo : ${modelList}">
+            <td th:text="${modelList.id}"/>
+            <td th:text="${modelList.name}"/>
+            <td th:text="${modelList.manufacturer.name}"/>
+            <td th:text="${iterationInfo.count + ' of total ' + iterationInfo.size}"/>
+
+        </tr>
+
+    </table>
+
+</form>
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

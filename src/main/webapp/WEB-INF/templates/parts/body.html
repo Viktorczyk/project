@@ -1,0 +1,51 @@
+<div data-th-fragment="bodyType">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-9">
+
+                <div id="table"  >
+
+                    <form th:action="@{/komis/body}" th:object="${addBody}" method="post">
+                        <table>
+                            <tr>
+                                <td>Podaj typ nadwozia</td>
+                                <td>
+                                    <input type="text" th:field="*{body}"/>
+                                </td>
+
+                                <td>
+                                    <input class="btn btn-primary" type="submit" value="Dodaj typ nadwozia" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table class="table table-striped table-dark">
+                            <tr>
+                                <th >Dostępne typy nadwozia</th>
+
+                            </tr>
+
+
+                            <tr  th:each="allBody , iterationInfo : ${allBody}">
+                                <td th:text="${allBody.id}"/>
+                                <td th:text="${allBody.body}"/>
+                                <td th:text="${iterationInfo.count + ' of total ' + iterationInfo.size}"/>
+
+                            </tr>
+
+                        </table>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+
+        </div>
+    </div>
+</div>

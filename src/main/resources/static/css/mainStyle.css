@@ -1,0 +1,12 @@
+body {
+    background: aliceblue;
+    /*background: linear-gradient(gray, #262626);*/
+    font-family: 'Lato', sans-serif;
+    height: auto;
+}
+
+#table{
+     margin-top: 35px !important;
+     border-line:3px;
+}
+

@@ -1,0 +1,51 @@
+<div data-th-fragment="fuel">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-12">
+
+                <div id="table"  >
+
+                    <form th:action="@{/komis/fuel}" th:object="${addFuel}" method="post">
+                        <table>
+                            <tr>
+                                <td>Podaj rodzaj paliwa</td>
+                                <td>
+                                    <input type="text" th:field="*{typeFuel}"/>
+                                </td>
+
+                                <td>
+                                    <input class="btn btn-primary" type="submit" value="Dodaj rodzaj paliwa" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table class="table table-striped table-dark">
+                            <tr>
+                                <th>Dostępne rodzaje paliwa</th>
+
+                            </tr>
+
+
+                            <tr th:each="allFuel , iterationInfo : ${allFuel}">
+                                <td th:text="${allFuel.id}"/>
+                                <td th:text="${allFuel.typeFuel}"/>
+                                <td th:text="${iterationInfo.count + ' of total ' + iterationInfo.size}"/>
+
+                            </tr>
+
+                        </table>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+
+        </div>
+    </div>
+</div>

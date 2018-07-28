@@ -1,0 +1,76 @@
+<div data-th-fragment="sellCar">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-15">
+
+                <h1><span data-th-text="'Sprzedajesz ' + ${purchaseDto.Car.manufacturer.name}">manufacturer</span>
+                    <span data-th-text="${purchaseDto.Car.model.name}"></span></h1>
+
+
+                <form data-th-action="@{/komis/purchase}" data-th-object="${purchaseDto}" method="post">
+                    <input type="hidden" data-th-value="${purchaseDto.carId}" data-th-attr="name='carId'"/>
+                    <table class="sellCarTable">
+                        <tr>
+                            <td>
+                                <label>Podaj cene </label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" data-th-field="*{price}" id="cena"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Imię</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" data-th-field="*{firstname}"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Nazwisko</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" data-th-field="*{lastname}"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Adres</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" data-th-field="*{address}"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Pesel</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" data-th-field="*{pesel}"/>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td  colspan="2">
+                                <input type="submit" class="btn btn-primary btn-lg btn-block"
+                                       value="Sprzedaj samochód"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+</div>

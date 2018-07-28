@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head data-th-replace="parts/head :: head"></head>
+
+<body>
+
+<div data-th-replace="parts/navbar :: nav"></div>
+
+<table id="table" class="table table-striped table-dark" >
+
+    <tr >
+        <th>Id</th>
+        <th>MARKA</th>
+        <th>Model</th>
+        <th>TypeCar</th>
+        <th>Skrzynia</th>
+        <th>Body</th>
+
+    </tr>
+    <tr  th:each="car , iterationInfo : ${car}">
+        <td th:text="${car.id}"/>
+        <td th:text="${car.manufacturer.name}"/>
+        <td th:text="${car.model.name}"/>
+        <td th:text="${car.typeCar}"/>
+        <td th:text="${car.gearBox.typeGearBox}"/>
+        <td th:text="${car.bodyType.body}"/>
+        <td th:text="${car.text}"/>
+        <td th:text="${car.price}"/>
+        <td><a data-th-href="@{/komis/{vehId}/sell (vehId=${car.id})}">  <input type="button" class="btn btn-warning" value="Sprzedaj"/></a></td>
+     </tr>
+</table>
+</body>
+</html>
