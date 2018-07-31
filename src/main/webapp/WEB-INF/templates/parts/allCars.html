@@ -1,0 +1,44 @@
+<div data-th-fragment="allCars">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-15">
+
+                <table id="table" class="table table-striped table-dark" >
+
+                    <tr >
+                        <th>Id</th>
+                        <th>MARKA</th>
+                        <th>MODEL</th>
+                        <th>TYP SAMOCHODU</th>
+                        <th>SKRZYNIA BIEGOW</th>
+                        <th>TYP NADWOZIA</th>
+                        <th>SILNIK</th>
+                        <th>MOC</th>
+                        <th>PRZEBIEG</th>
+                        <th>SPRZEDANY</th>
+                    </tr>
+                    <tr  th:each="Car , iterationInfo : ${allCars}">
+                        <td th:text="${Car.id}"/>
+                        <td th:text="${Car.manufacturer.name}"/>
+                        <td th:text="${Car.model.name}"/>
+                        <td th:text="${Car.typeCar}"/>
+                        <td th:text="${Car.gearBox.typeGearBox}"/>
+                        <td th:text="${Car.bodyType.body}"/>
+                        <td th:text="${Car.engine}"/>
+                        <td th:text="${Car.power}"/>
+                        <td th:text="${Car.mileage}"/>
+                        <td th:text="${Car.sell}"/>
+                        <td>
+                            <a th:href="@{/komis/car/{vehId} (vehId=${Car.id})}" > <input type="button" class="btn btn-success" value="Szczegóły"/></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+</div>

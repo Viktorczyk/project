@@ -1,0 +1,51 @@
+<div data-th-fragment="role">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-12">
+
+                <div id="table"  >
+
+                    <form th:action="@{/komis/role}" th:object="${addRole}" method="post">
+                        <table>
+                            <tr>
+                                <td>Podaj rolę</td>
+                                <td>
+                                    <input type="text" th:field="*{RoleType}"/>
+                                </td>
+
+                                <td>
+                                    <input class="btn btn-primary" type="submit" value="Dodaj rolę" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table class="table table-striped table-dark">
+                            <tr>
+                                <th>Dostępne role</th>
+
+                            </tr>
+
+
+                            <tr th:each="allRole , iterationInfo : ${allRole}">
+                                <td th:text="${allRole.id}"/>
+                                <td th:text="${allRole.RoleType}"/>
+                                <td th:text="${iterationInfo.count + ' of total ' + iterationInfo.size}"/>
+
+                            </tr>
+
+                        </table>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+
+        </div>
+    </div>
+</div>
