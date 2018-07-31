@@ -30,7 +30,7 @@
                 <tr>
                     <td>Model</td>
                     <td>
-                        <input class="form-control"  type="text" th:field="*{model}"/>
+                        <input class="form-control"  type="text" placeholder="Model" th:field="*{model}"/>
 
                     </td>
                 </tr>
@@ -105,7 +105,7 @@
                         Rok produkcji
                     </td>
                     <td>
-                        <input class="form-control"  type="text" th:field="*{yearProduction}"/>
+                        <input class="form-control" placeholder="Rok produkcji" type="text" th:field="*{yearProduction}"/>
                     </td>
                     <td>
                                 <span style="color: red" data-th-if="${#fields.hasErrors('yearProduction')}"
@@ -128,7 +128,7 @@
                         Numer ubezpieczenia
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{numberInsurance}"/>
+                        <input class="form-control" type="text" placeholder="Numer ubezpieczenia"  th:field="*{numberInsurance}"/>
                     </td>
                 </tr>
 
@@ -137,7 +137,7 @@
                         Numer rejstracyjny
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{numberPlate}"/>
+                        <input class="form-control" type="text" placeholder="Numer rejstracyjny" th:field="*{numberPlate}"/>
                     </td>
                 </tr>
 
@@ -146,7 +146,7 @@
                         Numer VIN
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{VIN}"/>
+                        <input class="form-control" type="text" placeholder="Numer VIN" th:field="*{VIN}"/>
                     </td>
                     <td>
                                 <span style="color: red" data-th-if="${#fields.hasErrors('VIN')}"
@@ -160,7 +160,7 @@
                         Silnik
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{engine}"/>
+                        <input class="form-control" type="text" placeholder="Silnik" th:field="*{engine}"/>
                     </td>
                 </tr>
 
@@ -169,7 +169,7 @@
                         Moc
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{power}"/>
+                        <input class="form-control" type="text" placeholder="Moc" th:field="*{power}"/>
                     </td>
                 </tr>
 
@@ -178,7 +178,7 @@
                         Opis
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{text}"/>
+                        <input class="form-control" type="text" placeholder="Opis" th:field="*{text}"/>
                     </td>
                 </tr>
 
@@ -187,7 +187,7 @@
                         Liczba jazd próbnych
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{numberTestDrive}"/>
+                        <input class="form-control" type="text" placeholder="Liczba jazd próbnych" th:field="*{numberTestDrive}"/>
                     </td>
                 </tr>
 
@@ -196,7 +196,7 @@
                         Cena
                     </td>
                     <td>
-                        <input class="form-control" type="text"  th:field="*{price}"/>
+                        <input class="form-control" type="text" placeholder="Cena" th:field="*{price}"/>
                     </td>
                 </tr>
 

@@ -26,6 +26,14 @@ public class CarDataController {
         this.defaultCarService = defaultCarService;
     }
 
+    /* Strona ze wszystkimi autami */
+    @RequestMapping(value="/allcars", method= RequestMethod.GET)
+    public String getAllCarsService(Model model){
+        List<Car> carList = defaultCarService.getAllCarsService();
+        model.addAttribute("allCars", carList);
+        return "pages/allCars";
+    }
+
 
     /* Strona z autami dostępny do sprzedaży */
     @RequestMapping(value="/cars", method= RequestMethod.GET)
