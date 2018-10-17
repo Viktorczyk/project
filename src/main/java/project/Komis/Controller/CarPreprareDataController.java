@@ -2,10 +2,8 @@ package project.Komis.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import project.Komis.Model.Dto.ModelDto;
 import project.Komis.Model.PrepareCar.BodyType;
 import project.Komis.Model.PrepareCar.Fuel;
@@ -61,6 +59,34 @@ public class CarPreprareDataController {
         defaultCarService.addFuel(fuelToSave);
         return "redirect:/komis/fuel";
     }
+
+    @GetMapping("/fuel/delete/{id}")
+    public String deleteFuel (Model model, @PathVariable("id") Integer fuelId){
+        Fuel fuel = new Fuel();
+        setFuelDel(fuel);
+        model.addAttribute("fuelID", fuelId);
+        if(fuel.getId()==null){
+            return "redirect:/komis/fuel";
+        }else{
+            return "pages/deleteFuel";
+        }
+
+    }
+
+    private void setFuelDel(@PathVariable("id") Fuel fuel) {
+        defaultCarService.getFuelByIdService(fuel.getId());
+
+
+    }
+
+    @DeleteMapping("fuel/delete/{id}")
+    public String deleteFuelType(@PathVariable("id") Integer fuelId,
+                                 Model model,
+                                 RedirectAttributes ra){
+        defaultCarService.deleteFuel(fuelId);
+        return "redirect:/komis/fuel";
+    }
+
 
     @GetMapping("/body")
     public String addBody(Model model){

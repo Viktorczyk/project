@@ -58,6 +58,9 @@ public class Car extends BaseModel implements Serializable {
 
     private Boolean sell;
 
+    public Car() {
+    }
+
     public Manufacturer getManufacturer() {
         return manufacturer;
     }

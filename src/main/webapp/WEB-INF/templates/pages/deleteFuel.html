@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/fuel/{id}(id=${fuelID.id})}" th:method="delete" th:object="${fuelID}">
+
+    <div class="form-control text-center">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="id">ID</span>
+            </div>
+            <input readonly="readonly" type="text" class="form-control text-center" aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm" th:field="*{fuelID.id}"
+            />
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="vin">Opis</span>
+            </div>
+
+            <input readonly="readonly" class="form-control text-center"
+                   aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm" th:field="*{fuelID.typeFuel}"
+                   th:value="*{fuelID.typeFuel}"/>
+        </div>
+
+
+
+
+
+        <div class="input-group mb-3">
+            <button onclick="return confirm('Are you sure you would like to DELETE THIS FUEL?');" type="submit"
+                    class="btn btn-primary btn-lg btn-block">Delete Car
+            </button>
+        </div>
+
+
+    </div>
+
+
+</form>
+</body>
+</html>

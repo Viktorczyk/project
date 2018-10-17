@@ -2,7 +2,6 @@ package project.Komis.Service;
 
 
 import org.springframework.stereotype.Service;
-import project.Komis.Model.Dto.ModelDto;
 import project.Komis.Model.PrepareCar.*;
 import project.Komis.Repository.CarRepository.*;
 
@@ -10,6 +9,7 @@ import java.util.List;
 
 @Service
 public class DefaultCarService implements CarDataService {
+
 
     private final CarRepository carRepository;
     private final FuelRepository fuelRepository;
@@ -27,6 +27,8 @@ public class DefaultCarService implements CarDataService {
         this.modelRepository = modelRepository;
         this.bodyTypeRepository = bodyTypeRepository;
     }
+
+
 
 
     @Override
@@ -49,7 +51,7 @@ public class DefaultCarService implements CarDataService {
         return carRepository.save(carToSave);
     }
 
-    @Override
+     @Override
     public List<Manufacturer> getAllManufacturereService() {
         return manufacturerRepository.findAll();
     }
@@ -128,6 +130,16 @@ public class DefaultCarService implements CarDataService {
     }
 
     @Override
+    public Fuel updateFuel(Fuel fuel) {
+        return fuelRepository.save(fuel);
+    }
+
+    @Override
+    public void deleteFuel(Integer fuelId) {
+            fuelRepository.delete(fuelId);
+    }
+
+    @Override
     public GearBox getGearBoxByIdService(Integer gearBoxId) {
         return gearBoxRepository.findOne(gearBoxId);
     }
@@ -152,6 +164,16 @@ public class DefaultCarService implements CarDataService {
     @Override
     public GearBox addGearService(GearBox newGearBox) {
         return gearBoxRepository.save(newGearBox);
+    }
+
+    @Override
+    public GearBox updateGearBox(GearBox gearBox) {
+        return gearBoxRepository.save(gearBox);
+    }
+
+    @Override
+    public void deleteGearbox(Integer gearBoxId) {
+        gearBoxRepository.delete(gearBoxId);
     }
 
     @Override

@@ -33,6 +33,12 @@
                             <tr th:each="allFuel , iterationInfo : ${allFuel}">
                                 <td th:text="${allFuel.id}"/>
                                 <td th:text="${allFuel.typeFuel}"/>
+                                <td>
+                                    <hr class="divider"/>
+                                <a th:href="@{fuel/delete/{id}   (id=${allFuel.id})}" type="button"
+                                   class="btn btn-primary btn-lg btn-block">Delete fuel
+                                </a>
+                                </td>
                                 <td th:text="${iterationInfo.count + ' of total ' + iterationInfo.size}"/>
 
                             </tr>

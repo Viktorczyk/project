@@ -22,6 +22,8 @@ public interface CarDataService {
 
     Car addCar(Car carToSave);
 
+
+
     /* szczegóły samochodów*/
 
     // Marka
@@ -51,6 +53,10 @@ public interface CarDataService {
 
     Fuel addFuel(Fuel newFuel);
 
+    Fuel updateFuel(Fuel fuel);
+
+    void deleteFuel (Integer fuelId);
+
     //Skrzynia - GearBox
     GearBox getGearBoxByIdService(Integer gearBoxId);
 
@@ -60,6 +66,9 @@ public interface CarDataService {
 
     GearBox addGearService(GearBox newGearBox);
 
+    GearBox updateGearBox(GearBox gearBox);
+
+    void deleteGearbox (Integer gearBoxId);
 
     //Body
     BodyType getBodyTypeByIdService(Integer bodyTypeId);

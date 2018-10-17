@@ -11,4 +11,5 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
     @Query("select v from Car v where  v.sell = false")
     List<Car> findNotSoldCar();
 
+
 }
